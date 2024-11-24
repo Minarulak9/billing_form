@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plain Jw Quick Sale</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container my-md-4 p-0">
+        <div class="card card-bg">
+            <div class="card-header bg-primary">
+                <h4 class="text-center text-light mb-0">Plain Jw Quick Sale</h4>
+
+            </div>
+            <div class="card-body">
+                <form id="saleForm">
+                    <div class="container-fluid p-0">
+                        <div class="row g-3">
+                            <!-- Date -->
+                            <div class="col-md-4 col-6">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" value="">
+                            </div>
+                            <!-- Name -->
+                            <div class="col-md-4 col-6">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name" value="CASH">
+                            </div>
+                            <!-- Data Sheet No -->
+                            <div class="col-md-4 col-6">
+                                <label for="dataSheetNo" class="form-label">Data Sheet No</label>
+                                <input type="text" class="form-control" id="dataSheetNo" placeholder="Data Sheet No">
+                            </div>
+                            <!-- Surveyed By -->
+                            <div class="col-md-4 col-6">
+                                <label for="surveyedBy" class="form-label">Surveyed By</label>
+                                <input type="text" class="form-control" id="surveyedBy" placeholder="Surveyed By">
+                            </div>
+                            <!-- Inputs Row -->
+                            <div class="col-12">
+                                <div class="row g-3">
+                                    <div class="col-md-2 topy-2">
+                                        <input type="text" class="form-control" id="ctNumber" placeholder="CT Number">
+                                    </div>
+                                    <div class="col-md-2 col-6">
+                                        <input type="text" class="form-control" id="wt" placeholder="WT">
+                                    </div>
+                                    <div class="col-md-2 col-6">
+                                        <input type="text" class="form-control" id="price" placeholder="Price">
+                                    </div>
+                                    <div class="col-md-2 col-6">
+                                        <input type="text" class="form-control" id="discount" placeholder="Discount">
+                                    </div>
+                                    <div class="col-md-2 col-6">
+                                        <input type="text" class="form-control" id="salePrice" placeholder="Sale Price">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-secondary w-100" id="addRow">+ Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Gray Area (Table) -->
+                            <div class="col-12 mt-3">
+                                <div class="gray-area table-container">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>CT Number</th>
+                                                    <th>WT</th>
+                                                    <th>Price</th>
+                                                    <th>Discount</th>
+                                                    <th>Sale Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="dataTable">
+                                                <!-- Dynamic rows will appear here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total Row -->
+                            <div class="col-md-3">
+                                <label for="total" class="form-label">Total</label>
+                                <input type="text" class="form-control" id="total" placeholder="0.00" readonly>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label for="cash" class="form-label">Cash</label>
+                                <input type="number" class="form-control" id="cash"  value="0" placeholder="0.00">
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label for="creditCard" class="form-label">Credit Card</label>
+                                <input type="number" class="form-control" id="creditCard" value="0"  placeholder="0.00">
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label for="debitCard" class="form-label">Debit Card</label>
+                                <input type="number" class="form-control" id="debitCard" value="0"  placeholder="0.00">
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label for="bankTransfer" class="form-label">Bank Transfer</label>
+                                <input type="number" class="form-control" id="bankTransfer" value="0"  placeholder="0.00">
+                            </div>
+                            <!-- Due Field -->
+                            <div class="col-md-3">
+                                <label for="due" class="form-label">Due</label>
+                                <input type="text" class="form-control" id="due" placeholder="0.00" value="0"  readonly>
+                            </div>
+                            <div class="col-md-12 d-flex justify-content-end mt-3">
+                                <button type="button" class="btn btn-primary me-2">
+                                    <i class="bi bi-printer"></i> Print
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-clockwise"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="./app.js"></script>
+    <!-- Custom JS -->
+</body>
+
+</html>
