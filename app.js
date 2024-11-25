@@ -131,6 +131,7 @@ table.addEventListener("click", (e) => {
 });
 
 const totalInput = document.getElementById("total");
+const creditCardField = document.getElementById("creditCard");
 function updateTotal() {
   let total = 0;
   const rows = table.querySelectorAll("tr");
@@ -140,11 +141,11 @@ function updateTotal() {
     total += salePrice;
   });
   totalInput.value = total.toFixed(2);
+  creditCardField.value = total.toFixed(2);
 }
 
 const totalField = document.getElementById("total");
 const cashField = document.getElementById("cash");
-const creditCardField = document.getElementById("creditCard");
 const debitCardField = document.getElementById("debitCard");
 const bankTransferField = document.getElementById("bankTransfer");
 const dueField = document.getElementById("due");
