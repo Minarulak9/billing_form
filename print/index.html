@@ -9,16 +9,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: calibri;
         }
 
         .invoice-header {
             text-align: center;
             margin-bottom: 30px;
         }
-
+        thead,tbody tr{
+            border-color: black;
+        }
+        .invoice-header .logo{
+            width: 140px;
+        }
+        .invoice-header .logo-right{
+            text-align: right;
+        }
         .invoice-header img {
             height: 60px;
+            max-width: 100%;
             border-radius: 6px;
         }
 
@@ -37,7 +46,7 @@
 
         .note-section {
             font-size: 0.9rem;
-            color: #555;
+            color: #000000;
             border: 1px solid gray;
         }
 
@@ -66,15 +75,43 @@
             right: 5px;
             bottom: 10px;
         }
-
         .table-me th,
         .table-me td {
             padding: 2px 8px;
             text-align: left;
+            
         }
         .signature{
             border-top: 1.5px solid rgb(34, 34, 34);
-            padding: 0 8px;
+            padding-left:25px;
+        }
+        .heading{
+            font-size: 3rem;
+            color:gray;
+            letter-spacing: 2px;
+        }
+        .sub_heading{
+            font-size: 1.5rem;
+            color:gray;
+        }
+        @media print{
+            #invoice{
+                margin-top: 0px !important;
+            }
+        }
+        @media only screen and (max-width:550px){
+            .logo{
+                width: 80px !important;
+            }
+            .logo img{
+                height: 30px;
+            }
+            .heading{
+                font-size: 1.5rem;
+            }
+            .sub_heading{
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -83,55 +120,58 @@
     <div class="container-md mt-4" id="invoice">
         <!-- Header -->
         <div class="invoice-header">
-            <div class="row">
-                <div class="col-6 text-start">
-                    <img id="logo1" src="./../img/logo1.webp" alt="Logo 1">
+            <div class="d-flex justify-content-between">
+                <div class="logo-left logo text-start">
+                    <img id="logo1" src="./../img/logo1.png" alt="Logo 1">
                 </div>
-                <div class="col-6 text-end">
-                    <img id="logo2" src="./../img/logo2.avif" alt="Logo 2">
+                <div class="center">
+                    <h2 class="heading mb-0">PLAIN JW</h2>
+                    <h3 class="sub_heading mb-0">Quick Sale</h3>
+                    <h4 class="mt-4 fw-bold">INVOICE</h4>
+                </div>
+                <div class="logo-right logo">
+                    <img id="logo2" src="./../img/logo2.png" alt="Logo 2">
                 </div>
             </div>
-            <h2>Plain Jw Quick Sale</h2>
-            <h4>INVOICE</h4>
-            <hr>
         </div>
 
         <!-- Invoice Details -->
         <div class="invoice-details">
             <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Invoice to:</strong> Krul Pandit</p>
-                    <p><strong>Invoice no:</strong> 087833</p>
+                <div class="col-6">
+                    <p class="mb-0"><strong>Invoice to:</strong></p>
+                    <p class="fw-bold">Krul Pandit</p>
                 </div>
-                <div class="col-md-6 text-end">
-                    <p><strong>Date:</strong> 23-06-2024</p>
-                    <p><strong>Served by:</strong> JDP</p>
+                <div class="col-6 text-end">
+                    <p class="mb-0"><strong>Date:</strong> 23-06-2024</p>
+                    <p class="mb-0"><strong>Invoice no:</strong> 087833</p>
+                    <p class="mb-0"><strong>Served by:</strong> DP</p>
                 </div>
             </div>
         </div>
 
         <!-- Item Table -->
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Item</th>
-                    <th>Total</th>
+                    <th class="text-end">Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>CT3023.7869 - EARRING -- 22 CT (3.93 gm)</td>
-                    <td>£348.00</td>
+                    <td class="fw-bold">CT3023.7869 - EARRING -- 22 CT (3.93 gm)</td>
+                    <td class="text-end">£348.00</td>
                 </tr>
             </tbody>
         </table>
 
         <!-- Total Section -->
         <div class="total-section">
-            <p><strong>Sub Total(Incl VAT):</strong> £348.00</p>
-            <p><strong>Delivery Charges:</strong> £0.00</p>
-            <h5><strong>Total:</strong> £348.00</h5>
-            <h5><strong>Paid Amount:</strong> £348.00</h5>
+            <p class="mb-1"><strong>Sub Total(Incl VAT):</strong> £348.00</p>
+            <p class="mb-1"><strong>Delivery Charges:</strong> £0.00</p>
+            <h5 class="mb-1"><strong>Total:</strong> £348.00</h5>
+            <h5 class="mb-1"><strong>Paid Amount:</strong> £348.00</h5>
         </div>
 
         <!-- Signature Section -->
@@ -155,9 +195,11 @@
 
         <!-- Note Section -->
         <div class="note-section my-2 p-2">
-            <p class="mb-0">Note: All payments to MULJIS JEWELLERS. Any queries: info@muljis.com. Strictly no refunds.
+            <p class="mb-0 px-3"><b>Note:</b> *All payments to MULJIS JEWELLERS. Any queries: info@muljis.com. Strictly no refunds.
                 Exchanges subject to discretion. Any partial payments made are non-refundable. The goods belong to
                 MULJIS JEWELLERS until fully paid.</p>
+            <p class="mb-0 px-3">*Make all cheques payable to MULJIS JEWELLERS.</p>
+            <p class="mb-0 px-3">*If you have any questions concerning this invoice, please contact: dilip@muljis.com</p>
         </div>
 
         <!-- Highlight Section -->
@@ -169,9 +211,9 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p>216-218 Upper Tooting Road - London - SW17 7EW</p>
-            <p>Tel: +44 (0)20 8767 8815 - Email: info@muljis.com - www.muljis.com</p>
-            <p>VAT: GB 372718438</p>
+            <p class="mb-0">216-218 Upper Tooting Road - London - SW17 7EW</p>
+            <p class="mb-0">Tel: +44 (0)20 8767 8815 - Email: info@muljis.com - www.muljis.com</p>
+            <p class="mb-0">VAT: GB 372718438</p>
         </div>
     </div>
 

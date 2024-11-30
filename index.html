@@ -11,12 +11,16 @@
 </head>
 
 <body>
-    <div class="container my-md-4 my-2 p-0">
+    <div class="container my-md-4 my-2 p-1 p-sm-0">
         
         <div class="d-flex justify-content-between align-items-center mb-2">
-            <img src="https://img.freepik.com/premium-vector/vector-colorful-logo-design_1002026-45.jpg" height="50px" class="rounded" alt="">
+            <div class="logo">
+                <img src="./img/logo1.png" height="50px" class="rounded" alt="">
+            </div>
             <h4 class="text-center text-dark mb-0">SALE REPORT</h4>
-            <img src="https://cdn.shopify.com/s/files/1/0558/6413/1764/files/Rainbow_Logo_Design_29_1024x1024.jpg?v=1680141974" height="50px" class="rounded" alt="">
+            <div class="logo text-end">
+                <img src="./img/logo2.png" height="50px" class="rounded" alt="">
+            </div>
         </div>
         <div class="card card-bg">
             <div class="card-header bg-primary">
@@ -25,7 +29,7 @@
             <div class="card-body">
                 <form id="saleForm">
                     <div class="container-fluid p-0">
-                        <div class="row g-3">
+                        <div class="row g-3 align-items-center">
                             <!-- Date -->
                             <div class="col-md-4 col-6">
                                 <label for="date" class="form-label">Date</label>
@@ -43,29 +47,42 @@
                             </div>
                             <!-- Surveyed By -->
                             <div class="col-md-4 col-6">
-                                <label for="surveyedBy" class="form-label">Surveyed By</label>
-                                <input type="text" class="form-control" id="surveyedBy" placeholder="Surveyed By">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <label for="served_by" class="form-label mb-0">Served By:</label>
+                                    <div class="served-by-options">
+                                        <input type="radio" id="dp" name="served_by" value="DP" class="radio-input" checked>
+                                        <label for="dp" class="btn">DP</label>
+                                        
+                                        <input type="radio" id="hp" name="served_by" value="HP" class="radio-input">
+                                        <label for="hp" class="btn">HP</label>
+                                    </div>
+                                </div>
                             </div>
                             <!-- Inputs Row -->
                             <div class="col-12">
-                                <div class="row g-3">
+                                <div class="row g-3 align-items-center">
                                     <div class="col-md-2 topy-2">
+                                        <label for="ctNumber" class="form-label mb-0">CT Number</label>
                                         <input type="text" class="form-control" id="ctNumber" placeholder="CT Number">
                                     </div>
                                     <div class="col-md-2 col-6">
+                                        <label for="wt" class="form-label mb-0">WT</label>
                                         <input type="text" class="form-control" id="wt" placeholder="WT">
                                     </div>
                                     <div class="col-md-2 col-6">
+                                        <label for="price" class="form-label mb-0">Price</label>
                                         <input type="text" class="form-control" id="price" placeholder="Price">
                                     </div>
                                     <div class="col-md-2 col-6">
+                                        <label for="discount" class="form-label mb-0">Discount</label>
                                         <input type="text" class="form-control" id="discount" placeholder="Discount">
                                     </div>
                                     <div class="col-md-2 col-6">
+                                        <label for="salePrice" class="form-label mb-0">Sale Price</label>
                                         <input type="text" class="form-control" id="salePrice" placeholder="Sale Price">
                                     </div>
                                     <div class="col-md-2">
-                                        <button type="button" class="btn btn-secondary w-100" id="addRow">+ Add</button>
+                                        <button type="button" class="btn btn-secondary w-100 mt-md-4" id="addRow">+ Add</button>
                                     </div>
                                 </div>
                             </div>

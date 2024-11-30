@@ -1,3 +1,6 @@
+body{
+    font-family: calibri;
+}
 .gray-area {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
@@ -39,7 +42,9 @@ th {
 .suggestion:hover {
     background: #f0f0f0;
 }
-
+.logo{
+    width: 150px;
+}
 table .btn{
     font-size: 9px !important;
     padding: 2px 6px !important;
@@ -47,7 +52,35 @@ table .btn{
 input{
     border: 1px solid rgb(149, 199, 255) !important;
 }
+.served-by-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
 
+  /* Hide the default radio button */
+  .radio-input {
+    display: none;
+  }
+
+  /* Style the label to look like buttons */
+  .served-by-options .btn {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 15px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d3d3d3; /* Default gray background */
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  /* Highlight the label when its radio button is selected */
+  .radio-input:checked + .btn {
+    background-color: #90ee90; /* Light green background */
+    color: #000; /* Text color */
+  }
 
 @media only screen and (max-width:600px){
     .col-md-4,
@@ -70,5 +103,11 @@ input{
     }
     .topy-2{
         margin-top: 17px !important;
+    }
+    .logo{
+        width: 80px;
+    }
+    .logo img{
+        height: 30px;
     }
 }
